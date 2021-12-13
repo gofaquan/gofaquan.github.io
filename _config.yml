@@ -108,4 +108,6 @@ theme: hexo-theme-Claudia
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
-  type: ''
+  type: 'git'
+  repo: git@github.com:gofaquan/gofaquan.github.io.git
+  branch: main
