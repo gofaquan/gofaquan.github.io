@@ -21,8 +21,7 @@ highlight_theme: "tomorrow-night-eighties"# "default" (default), "tomorrow", "to
 url     : # the base hostname & protocol for your site e.g. https://www.someone.com
 baseurl : # does not include hostname
 title   :  "Gofaquan"
-description: > # this means to ignore newlines until "Language & timezone"
-"Go / Java / Kotlin / Fitness => keep fit with exercise / guitar" 
+description:  # this means to ignore newlines until "Language & timezone"  "Go / Java / Kotlin / Fitness => keep fit with exercise / guitar" 
 
 
 ## => Language and Timezone
