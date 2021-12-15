@@ -22,7 +22,7 @@ url     : # the base hostname & protocol for your site e.g. https://www.someone.
 baseurl : # does not include hostname
 title   :  "Gofaquan"
 description: > # this means to ignore newlines until "Language & timezone"
-Go / Java / Kotlin / Fitness => keep fit with exercise / guitar 
+"Go / Java / Kotlin / Fitness => keep fit with exercise / guitar" 
 
 
 ## => Language and Timezone
@@ -35,7 +35,7 @@ timezone: # see https://en.wikipedia.org/wiki/List_of_tz_database_time_zones for
 ##############################
 author:
   type      : # "person" (default), "organization"
-  name      :  "gofaquan"
+  name     :  "gofaquan"
   url       :
   avatar    : # path or url of avatar image (square)
   bio       : I am an amazing person.
