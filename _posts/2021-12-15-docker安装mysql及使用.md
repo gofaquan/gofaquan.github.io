@@ -44,17 +44,18 @@ tags: Docker
 4. 如果要建立目录映射
 
    ```shell
-   $ sudo docker run -p 3306:3306 --name mysql \
-   -v /usr/local/docker/mysql/conf:/etc/mysql \
-   -v /usr/local/docker/mysql/logs:/var/log/mysql \
-   -v /usr/local/docker/mysql/data:/var/lib/mysql \
+   $ docker run --privileged=true -p 3306:3306 --name mysql5 \                
+   -v ~/docker/mysql5/conf:/etc/mysql/conf.d \
+   -v ~/docker/mysql5/logs:/var/log/mysql \
+   -v ~/docker/mysql5/data:/var/lib/mysql \
    -e MYSQL_ROOT_PASSWORD=123456 \
    -d mysql:5.7
    ```
 
    - -v：主机和容器的目录映射关系，":"前为主机目录，之后为容器目录
 
-5. 检查容器是否正确运行
+
+1. 检查容器是否正确运行
 
    ```shell
    $ docker container ls
@@ -136,3 +137,36 @@ tags: Docker
      +--------------+------+-------------------------------------------+
      3 rows in set (0.00 sec)
      ```
+
+
+
+4. 如果你的mysql容器无法插入中文数据
+
+```shell
+cd [你挂载的容器conf.d目录]
+#按照上方docker run的话我这里是cd ~/docker/mysql5/conf
+vim my.cnf
+#插入如下
+[client]                                    #针对客户端的设置
+default-character-set = utf8    #指定字符集(mariadb默认是拉丁文)
+
+[mysqld]                               #设置mysql-server相关信息
+collation_server = utf8_general_ci   
+character_set_server = utf8
+
+#重启mysql
+docker restart mysql5
+#之后再新建数据库！！！！！更改之后旧的数据库还是不能插入中文
+#示例
+create database gofaquan;
+
+use gofaquan;
+
+create table test_utf8_again(name varchar(20));
+
+INSERT INTO gofaquan.test_utf8_again (name)
+VALUES (' 你爸爸');
+
+#插入成功
+```
+
