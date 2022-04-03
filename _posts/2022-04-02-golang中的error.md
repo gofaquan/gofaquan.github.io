@@ -29,7 +29,7 @@ func main() {
 
 
 
-![image-20220402105252365](./images/image-20220402105252365.png)
+![image-20220402105252365](/images/image-20220402105252365.png)
 
 * 我们经常使用 *errors.New()* 来返回一个 *error* 对象。
 
@@ -39,7 +39,7 @@ err :=  errors.New("aa")
 
 让我们来康康 New 里面有啥
 
-![image-20220402105617272](./images/image-20220402105617272.png)
+![image-20220402105617272](_posts/images/image-20220402105617272.png)
 
  不难看出， `New`  也是返回  `error` 接口, 通过 `errorString` 结构体 实现 `Error` func 满足 `error` 接口从而输出
 
