@@ -29,7 +29,7 @@ func main() {
 
 
 
-![image-20220402105252365](.\images\image-20220402105252365.png)
+![image-20220402105252365](./images/image-20220402105252365.png)
 
 * 我们经常使用 *errors.New()* 来返回一个 *error* 对象。
 
@@ -163,7 +163,7 @@ func main() {
 
 正好在 net 包中找到了这样的例子，`UnknownNetworkError ` 这样的 type 实现了 Error 接口，因为是未知错误，表示它的 timeout() 和 temporary()   返回都是 false 表示 不是这两种类型的错误，而 func   Error 就把未知错误打印出来供 debug
 
-![image-20220402130834419](.\images\image-20220402130834419.png)
+![image-20220402130834419](./images/image-20220402130834419.png)
 
 这里的关键是，这个逻辑可以在不导入定义错误的包或者实际上不了解 err 的底层类型的情况下实现——我们只对它的行为结果感兴趣 (这个东西是不是发生了哪些错误)  
 
